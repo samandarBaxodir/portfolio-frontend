@@ -13,7 +13,7 @@ export function ProjectCard({ project }: { project: Project }) {
       >
         {project.media_url ? (
           <img
-            src={`http://127.0.0.1:8000${project.media_url}`}
+            src={`https://portfolio-backend-2rpn.onrender.com${project.media_url}`}
             alt={project.title}
             className="w-full h-full object-cover"
           />

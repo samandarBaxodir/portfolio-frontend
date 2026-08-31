@@ -46,7 +46,7 @@ export function ImageUpload({
       {value ? (
         <div className="relative w-full h-32 rounded-lg overflow-hidden border border-border mb-1">
           <img
-            src={value.startsWith("http") ? value : `http://127.0.0.1:8000${value}`}
+            src={value.startsWith("http") ? value : `https://portfolio-backend-2rpn.onrender.com${value}`}
             alt="Yuklangan rasm"
             className="w-full h-full object-cover"
           />

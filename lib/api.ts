@@ -1,4 +1,4 @@
-const API_URL = "http://127.0.0.1:8000";
+const API_URL = "https://portfolio-backend-2rpn.onrender.com";
 
 export async function getProjects(category?: string) {
   const url = category
