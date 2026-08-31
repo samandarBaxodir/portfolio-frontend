@@ -1,65 +1,79 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Download } from "lucide-react";
+import { Typewriter } from "@/components/typewriter";
+import { MagneticButton } from "@/components/magnetic-button";
+import { FaceMorph } from "@/components/face-morph";
+import { RevealGlass } from "@/components/reveal-glass";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="flex-1">
+      <section className="flex items-center justify-center px-6 min-h-[calc(100vh-4rem)]">
+        <div className="max-w-2xl text-center glass glow-accent rounded-3xl p-10 md:p-14">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 min-h-[1.2em]"
+          >
+            <Typewriter text="Salom, men Salom 👋" />
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-muted text-lg mb-10"
+          >
+            IT talabasi, full-stack dasturchi va 3D dizayner. Python, Flutter,
+            3ds Max va AutoCAD orqali g'oyalarni haqiqatga aylantiraman.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex items-center justify-center gap-4"
+          >
+            <MagneticButton
+              href="/projects"
+              className="group flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Loyihalarni ko'rish
+              <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            </MagneticButton>
+            <MagneticButton
+              href="/cv.pdf"
+              className="flex items-center gap-2 border border-border px-6 py-3 rounded-full font-medium hover:bg-card transition-colors"
             >
-              Learning
-            </a>{" "}
-            center.
+              <Download size={16} /> CV yuklab olish
+            </MagneticButton>
+          </motion.div>
+        </div>
+      </section>
+
+      <FaceMorph />
+
+      <section className="px-6 py-24 max-w-3xl mx-auto">
+        <RevealGlass>
+          <h2 className="text-2xl font-semibold tracking-tight mb-4">
+            Men haqimda
+          </h2>
+          <p className="text-foreground/90 leading-relaxed whitespace-pre-line">
+            {`2021-yilda IT sohasiga birinchi qadam qo'yganimda, ekranga chiqqan oddiy print("Hello World") meni hamon esimda qolgan hayajonga to'ldirgan edi. O'shandan beri yo'lim to'xtovsiz davom etmoqda — ustozlarim bo'lsa-da, muammolarni o'zim yechish va o'zim o'rganishga bo'lgan ishtiyoqim meni har doim oldinga yetaklagan.
+
+Bugun Python, Flutter, Java, C++, C# kabi dasturlash tillari bilan bir qatorda, 3ds Max va AutoCAD'da ham professional darajada ishlayman — bu ikkalasi men uchun bir-birini to'ldiradi: kod yozish menga amaliy xulosalar va o'sish beradi, 3D dizayn esa ilhom manbaim va tasavvurimni jonlantiruvchi vositam.
+
+Bog'chalarni raqamlashtirish loyihamdan boshlab, hozirgi portfolio saytimgacha — har bir loyiha meni yangi bosqichga olib chiqadi. Yo'lda muvaffaqiyatsizliklar ham bo'ldi — AgroMarket loyihamni rejasiz boshlaganimda, aniq reja va bosqichma-bosqich yondashuvning qanchalik muhimligini chuqur his qildim.
+
+Kelgusi 1-2 yil ichida o'z jamoam bilan 3-4 ta shaxsiy startap loyihasini muvaffaqiyatli yakunlashni maqsad qilganman — ayniqsa AgriTech yo'nalishida, chunki bu Samarqand agroinnovatsiyalar va tadqiqotlar institutidagi ta'limimga chambarchas bog'liq. Men bilan ishlagan har bir odam bir-birining fikrini hisobga olib, birga rivojlanish tajribasini his qilishini xohlayman.
+
+Agar bitta narsani eslab qolishingizni xohlasam — bu shu: men katta tajribaga ega bo'lib, yaxshi natijalar qildim, va hali ham o'sishda davom etyapman.`}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        </RevealGlass>
+      </section>
+    </main>
   );
 }
