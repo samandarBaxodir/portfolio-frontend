@@ -14,26 +14,26 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
   const date = `${d.getDate()}-${oyNomlari[d.getMonth()]}, ${d.getFullYear()}`;
 
   return (
-    <TiltCard className="p-5">
-      <div className="flex gap-4">
-        <div className="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
-          {achievement.image_url ? (
-            <img
-              src={`https://portfolio-backend-2rpn.onrender.com${achievement.image_url}`}
-              alt={achievement.title}
-              className="w-full h-full object-cover rounded-full"
-            />
-          ) : (
-            <Award size={20} className="text-accent" />
-          )}
+    <TiltCard>
+      {achievement.image_url ? (
+        <div className="h-48 overflow-hidden">
+          <img
+            src={`https://portfolio-backend-2rpn.onrender.com${achievement.image_url}`}
+            alt={achievement.title}
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+          />
         </div>
-        <div>
-          <p className="text-xs text-muted mb-1">{date}</p>
-          <h3 className="font-semibold mb-1">{achievement.title}</h3>
-          {achievement.description && (
-            <p className="text-sm text-muted">{achievement.description}</p>
-          )}
+      ) : (
+        <div className="h-48 bg-border flex items-center justify-center">
+          <Award size={32} className="text-accent" />
         </div>
+      )}
+      <div className="p-5">
+        <p className="text-xs text-muted mb-1">{date}</p>
+        <h3 className="font-semibold mb-2">{achievement.title}</h3>
+        {achievement.description && (
+          <p className="text-sm text-muted">{achievement.description}</p>
+        )}
       </div>
     </TiltCard>
   );
