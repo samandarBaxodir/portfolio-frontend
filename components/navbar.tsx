@@ -35,7 +35,7 @@ export function Navbar() {
     >
       <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="font-semibold tracking-tight">
-          Salom
+          Home
         </Link>
         <div className="hidden md:flex items-center gap-8 text-sm text-muted">
           {links.map((link) => (
