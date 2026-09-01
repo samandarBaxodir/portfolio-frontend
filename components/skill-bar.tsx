@@ -10,8 +10,14 @@ export function SkillBar({ skill }: { skill: Skill }) {
   const percent = (skill.level / 5) * 100;
 
   return (
-    <div ref={ref}>
-      <div className="flex items-center justify-between text-sm mb-2">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 16 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+      className="glass rounded-2xl p-5"
+    >
+      <div className="flex items-center justify-between text-sm mb-3">
         <span className="font-medium">{skill.name}</span>
         <span className="text-muted">{skill.level}/5</span>
       </div>
@@ -19,10 +25,10 @@ export function SkillBar({ skill }: { skill: Skill }) {
         <motion.div
           initial={{ width: 0 }}
           animate={isInView ? { width: `${percent}%` } : { width: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="h-full rounded-full bg-accent"
+          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+          className="h-full rounded-full bg-accent glow-accent"
         />
       </div>
-    </div>
+    </motion.div>
   );
 }
