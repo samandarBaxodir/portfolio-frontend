@@ -52,3 +52,9 @@ body {
 .glow-accent {
   box-shadow: 0 0 40px -10px color-mix(in srgb, var(--accent) 50%, transparent);
 }
+
+@media (max-width: 768px) {
+  .glass.glow-accent {
+    padding: 1.5rem !important;
+  }
+}
