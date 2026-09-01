@@ -18,7 +18,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-4xl md:text-5xl font-semibold tracking-tight mb-4 min-h-[1.2em]"
           >
-            <Typewriter text="Salom, men Salom 👋" />
+            <Typewriter text="Salom, men Samandar 👋" />
           </motion.h1>
 
           <motion.p
