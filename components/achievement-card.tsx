@@ -18,7 +18,7 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
       {achievement.image_url ? (
         <div className="h-48 overflow-hidden">
           <img
-            src={`https://portfolio-backend-2rpn.onrender.com${achievement.image_url}`}
+            src={achievement.image_url.startsWith("http") ? achievement.image_url : `https://portfolio-backend-2rpn.onrender.com${achievement.image_url}`}
             alt={achievement.title}
             className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
           />
