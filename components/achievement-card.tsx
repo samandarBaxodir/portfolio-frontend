@@ -19,7 +19,7 @@ export function AchievementCard({ achievement }: { achievement: Achievement }) {
         <div className="shrink-0 w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
           {achievement.image_url ? (
             <img
-              src={`http://127.0.0.1:8000${achievement.image_url}`}
+              src={`https://portfolio-backend-2rpn.onrender.com${achievement.image_url}`}
               alt={achievement.title}
               className="w-full h-full object-cover rounded-full"
             />
